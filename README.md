@@ -87,7 +87,7 @@ DB_PASSWORD=
 
 ```
 cd {项目名称}
-git clone https://github.com/chaodaox/dcat-admin.git ./vendor/dcat/laravel-admin
+git clone https://github.com/icuy/dcat-admin.git ./vendor/dcat/laravel-admin
 composer install
 composer require dcat/laravel-admin
 ```
