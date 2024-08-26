@@ -61,18 +61,15 @@
 
 
 ### 环境
- - PHP >= 7.1.0
- - Laravel 5.5.0 ~ 9.*
+ - PHP >= 8.2.0
+ - Laravel 11.*
  - Fileinfo PHP Extension
 
 ### 安装
 
 首先需要安装`laravel`框架，如已安装可以跳过此步骤。如果您是第一次使用`laravel`，请务必先阅读文档 [安装 《Laravel中文文档》](https://learnku.com/docs/laravel/8.x/installation/9354) ！
 ```bash
-composer create-project --prefer-dist laravel/laravel 项目名称 9.*
-# 或
-composer create-project --prefer-dist laravel/laravel 项目名称
-```
+composer create-project --prefer-dist laravel/laravel 项目名称 11.*
 
 安装完`laravel`之后需要修改`.env`文件，设置数据库连接设置正确
 
@@ -90,7 +87,8 @@ DB_PASSWORD=
 
 ```
 cd {项目名称}
-
+git clone https://github.com/chaodaox/dcat-admin.git ./vendor/dcat/laravel-admin
+composer install
 composer require dcat/laravel-admin
 ```
 
@@ -99,6 +97,7 @@ composer require dcat/laravel-admin
 ```
 php artisan admin:publish
 ```
+
 
 在该命令会生成配置文件`config/admin.php`，可以在里面修改安装的地址、数据库连接、以及表名，建议都是用默认配置不修改。
 
@@ -119,6 +118,13 @@ location / {
 
 启动服务后，在浏览器打开 `http://localhost/admin`，使用用户名 `admin` 和密码 `admin`登陆。
 
+如果报错**array_merge(): Argument #1 must be of type array, string given**
+
+1、先删除 lang 目录
+
+2、运行 php artisan lang:publish
+
+3、再运行 php artisan admin:publish
 
 <a name="extensions"></a>
 ### 扩展
